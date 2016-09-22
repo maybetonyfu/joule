@@ -1,0 +1,21 @@
+{
+    "environment": "local",
+    "demand": {
+        "url": "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
+        "pick": 1,
+        "polls_per_hour": 2,
+        "fetcher": "fetch_data",
+        "pre_parser": "remove_csv_comment",
+        "parser": "parse_csv",
+        "exporter": "export_demand"
+    },
+    "dispatch": {
+        "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",
+        "pick": 1,
+        "polls_per_hour": 12,
+        "fetcher": "fetch_data",
+        "pre_parser": "remove_csv_comment",
+        "parser": "parse_csv",
+        "exporter": "export_dispatch"
+    }
+}

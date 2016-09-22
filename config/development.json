@@ -1,0 +1,13 @@
+{
+    "environment": "development",
+    "demand": {
+        "url": "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
+        "pick": 1,
+        "polls_per_hour": 2
+    },
+    "dispatch": {
+        "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",
+        "pick": 1,
+        "polls_per_hour": 12
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "joule",
+  "version": "0.1.0",
+  "description": "Tiny aemo data exporter powered by nodejs",
+  "repository": "https://github.com/tonysickpony/joule.git",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . && echo 'OK'",
+    "test": "ava -v",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^1.21.0",
+    "csv": "^1.1.0",
+    "download": "^5.0.2",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.4",
+    "node-schedule": "^1.1.1",
+    "promisify-node": "^0.4.0",
+    "winston": "^2.2.0",
+    "x-ray": "^2.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "eslint": "^3.5.0"
+  }
+}
