@@ -2,6 +2,8 @@
 
 Tiny aemo data exporter powered by nodejs
 
+[![Build Status](https://travis-ci.org/tonysickpony/joule.svg?branch=master)](https://travis-ci.org/tonysickpony/joule)
+
 * All data values are rounded in concern of performance
 
 
