@@ -2,7 +2,7 @@ const moment = require("moment-timezone")
 
 const parse_region_id = require("../utils/parse_region_id")
 
-function parse_demand (data) {
+function transform_demand (data) {
 
     const demand = data
         .map(datum => {
@@ -27,4 +27,4 @@ function parse_demand (data) {
 
 }
 
-module.exports = parse_demand
+module.exports = transform_demand

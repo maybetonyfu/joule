@@ -10,11 +10,13 @@ function scrape (opt) {
 
         pick,
 
-        fetcher,
+        fetch,
 
-        pre_parser,
+        pre_pars,
 
-        parser,
+        parse,
+
+        transform,
 
         exporter
 
@@ -22,7 +24,7 @@ function scrape (opt) {
 
     const x = xray()
 
-    if (!parser || typeof parser !== "function") {
+    if (!parse || typeof parser !== "function") {
 
         throw new Error("No parser found")
 
@@ -42,11 +44,11 @@ function scrape (opt) {
                 .slice(-pick)
                 .map(file_name => {
 
-                    return fetcher(url, file_name)
-                        .then(data => pre_parser(data))
-                        .then(data => parser(data))
+                    return fetch(url, file_name)
+                        .then(data => pre_pars(data))
+                        .then(data => parse(data))
+                        .then(data => transform(data))
                         .then(data => exporter(data))
-                        .then(data => console.log(data))
                         .catch(err => logger.error(err))
 
                 })

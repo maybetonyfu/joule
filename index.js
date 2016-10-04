@@ -44,11 +44,13 @@ function scrape_dispatch () {
 
     logger.info("Job triggered")
 
-    const fetcher = config.get("dispatch.fetcher")
+    const fetch = config.get("dispatch.fetch")
 
-    const pre_parser = config.get("dispatch.pre_parser")
+    const pre_parse = config.get("dispatch.pre_parse")
 
-    const parser = config.get("dispatch.parser")
+    const parse = config.get("dispatch.parse")
+
+    const transform = config.get("dispatch.transform")
 
     const exporter = config.get("dispatch.exporter")
 
@@ -62,11 +64,13 @@ function scrape_dispatch () {
 
         pick,
 
-        fetcher: require(`./tasks/${fetcher}`),
+        fetch: require(`./tasks/${fetch}`),
 
-        pre_parser: require(`./tasks/${pre_parser}`),
+        pre_parse: require(`./tasks/${pre_parse}`),
 
-        parser: require(`./tasks/${parser}`),
+        parse: require(`./tasks/${parse}`),
+
+        transform: require(`./tasks/${transform}`),
 
         exporter: require(`./tasks/${exporter}`)
 

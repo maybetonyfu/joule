@@ -1,6 +1,6 @@
 const test = require("ava")
 
-const parse_demand = require("./export_demand")
+const transform_demand = require("./transform_demand")
 
 test("export demand serie", t => {
 
@@ -41,7 +41,7 @@ test("export demand serie", t => {
         }
     ]
 
-    return parse_demand(data)
+    return transform_demand(data)
         .then(series => {
 
             t.is(typeof series.demand[0][0]["time"], "number")

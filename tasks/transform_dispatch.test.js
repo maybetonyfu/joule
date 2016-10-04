@@ -1,6 +1,6 @@
 const test = require("ava")
 
-const parse_dispatch = require("./export_dispatch")
+const transform_dispatch = require("./transform_dispatch")
 
 test("export dispatch serie", t => {
 
@@ -41,7 +41,7 @@ test("export dispatch serie", t => {
         }
     ]
 
-    return parse_dispatch(data)
+    return transform_dispatch(data)
         .then(series => {
 
             t.is(typeof series.dispatch[0][0]["time"], "number")

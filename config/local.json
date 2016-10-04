@@ -7,7 +7,8 @@
         "fetcher": "fetch_data",
         "pre_parser": "remove_csv_comment",
         "parser": "parse_csv",
-        "exporter": "export_demand"
+        "exporter": "export_demand",
+        "writer": "write_data"
     },
     "dispatch": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",
@@ -16,6 +17,7 @@
         "fetcher": "fetch_data",
         "pre_parser": "remove_csv_comment",
         "parser": "parse_csv",
-        "exporter": "export_dispatch"
+        "exporter": "export_dispatch",
+        "writer": "write_data"
     }
 }

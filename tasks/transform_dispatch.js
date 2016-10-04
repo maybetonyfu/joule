@@ -2,7 +2,7 @@ const moment = require("moment-timezone")
 
 const generators = require("../generators.json")
 
-function parse_dispatch (data) {
+function transform_dispatch (data) {
 
     const dispatch = data
         .filter(datum => generators[datum.DUID])
@@ -30,4 +30,4 @@ function parse_dispatch (data) {
 
 }
 
-module.exports = parse_dispatch
+module.exports = transform_dispatch
