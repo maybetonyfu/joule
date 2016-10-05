@@ -1,5 +1,5 @@
 {
-    "environment": "test",
+    "environment": "dev",
     "demand": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
         "pick": 1,

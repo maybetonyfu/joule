@@ -1,19 +1,14 @@
-var influx = require("influx")
+const influx = require("influx")
+const config = require("config")
 
-const client = influx({
-    host: "45.63.27.151",
-    port: 8086,
-    protocol: "http",
-    username: "datawrite",
-    password: "datawrite",
-    database: "aemo_data"
-})
+const db = config.get("db")
+const client = influx(db)
 
 function export_data (data) {
 
     return new Promise((resolve, reject) => {
 
-        client.writeSeries(data, {db: "aemo_data"}, (error, response) => error ? reject(error) : resolve(response))
+        client.writeSeries(data, {db: db.database}, (error, response) => error ? reject(error) : resolve(response))
 
     })
 

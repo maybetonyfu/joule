@@ -1,5 +1,5 @@
 {
-    "environment": "development",
+    "environment": "prod",
     "demand": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
         "pick": 1,
@@ -8,7 +8,7 @@
         "pre_parse": "remove_csv_comment",
         "parse": "parse_csv",
         "transform": "transform_demand",
-        "exporter": "export_data"
+        "export_db": "export_data"
     },
     "dispatch": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",

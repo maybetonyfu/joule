@@ -12,13 +12,13 @@ function scrape (opt) {
 
         fetch,
 
-        pre_pars,
+        pre_parse,
 
         parse,
 
         transform,
 
-        exporter
+        export_db
 
     } = opt
 
@@ -45,10 +45,10 @@ function scrape (opt) {
                 .map(file_name => {
 
                     return fetch(url, file_name)
-                        .then(data => pre_pars(data))
+                        .then(data => pre_parse(data))
                         .then(data => parse(data))
                         .then(data => transform(data))
-                        .then(data => exporter(data))
+                        .then(data => export_db(data))
                         .catch(err => logger.error(err))
 
                 })

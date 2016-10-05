@@ -52,7 +52,7 @@ function scrape_dispatch () {
 
     const transform = config.get("dispatch.transform")
 
-    const exporter = config.get("dispatch.exporter")
+    const export_db = config.get("dispatch.export_db")
 
     const url = config.get("dispatch.url")
 
@@ -72,7 +72,7 @@ function scrape_dispatch () {
 
         transform: require(`./tasks/${transform}`),
 
-        exporter: require(`./tasks/${exporter}`)
+        export_db: require(`./tasks/${export_db}`)
 
     }
 

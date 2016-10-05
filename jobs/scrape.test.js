@@ -28,7 +28,7 @@ test("panic! parser is not a function", t => {
 
             pick: 1,
 
-            parser: "not a function"
+            parse: "not a function"
 
         })
 
