@@ -24,7 +24,7 @@ function scrape (opt) {
 
     const x = xray()
 
-    if (!parse || typeof parser !== "function") {
+    if (!parse || typeof parse !== "function") {
 
         throw new Error("No parser found")
 
