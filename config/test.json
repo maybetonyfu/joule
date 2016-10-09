@@ -17,8 +17,8 @@
         "fetch": "fetch_data",
         "pre_parse": "remove_csv_comment",
         "parse": "parse_csv",
-        "transform": "transform_dispatch",
-        "exporter": "export_data"
+        "transform": "reduce_dispatch",
+        "export_db": "export_data"
     },
     "db":{
         "host": "localhost",
