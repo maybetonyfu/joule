@@ -8,7 +8,7 @@
         "pre_parse": "remove_csv_comment",
         "parse": "parse_csv",
         "transform": "transform_demand",
-        "export_db": "log_data"
+        "export_db": "export_data"
     },
     "dispatch": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",
@@ -18,7 +18,7 @@
         "pre_parse": "remove_csv_comment",
         "parse": "parse_csv",
         "transform": "reduce_dispatch",
-        "export_db": "log_data"
+        "export_db": "export_data"
     },
     "db":{
         "host": "localhost",
