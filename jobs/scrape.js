@@ -10,6 +10,8 @@ function scrape (opt) {
 
         pick,
 
+        pattern,
+
         fetch,
 
         pre_parse,
@@ -41,6 +43,7 @@ function scrape (opt) {
 
         Promise.all(
             files
+                .filter(file_name => file_name.includes(pattern))
                 .slice(-pick)
                 .map(file_name => {
 

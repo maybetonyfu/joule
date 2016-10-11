@@ -2,6 +2,7 @@
     "environment": "test",
     "demand": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
+        "pattern": "PUBLIC_ACTUAL_OPERATIONAL_DEMAND_HH_",
         "pick": 1,
         "polls_per_hour": 1,
         "fetch": "fetch_data",
@@ -12,6 +13,7 @@
     },
     "dispatch": {
         "url": "http://www.nemweb.com.au/Reports/CURRENT/Dispatch_SCADA/",
+        "pattern": "PUBLIC_DISPATCHSCADA_",
         "pick": 1,
         "polls_per_hour": 1,
         "fetch": "fetch_data",

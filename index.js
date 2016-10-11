@@ -4,41 +4,53 @@ const config = require("config")
 const logger = require("./utils/logger")
 const scrape = require("./jobs/scrape")
 
-// schedule.scheduleJob("*/10 * * * * *", scrape_demand)
+schedule.scheduleJob("*/15 * * * *", scrape_demand)
 
-schedule.scheduleJob("*/10 * * * * *", scrape_dispatch)
+schedule.scheduleJob("*/5 * * * *", scrape_dispatch)
 
-// function scrape_demand () {
+function scrape_demand () {
 
-//     logger.info("Job triggered")
+    logger.info("Job triggered")
 
-//     const fetcher = require("tasks/fetch_data")
+    const fetch = config.get("demand.fetch")
 
-//     const pre_parser = require("tasks/remove_csv_comment")
+    const pre_parse = config.get("demand.pre_parse")
 
-//     const parser = require("tasks/parse_csv")
+    const parse = config.get("demand.parse")
 
-//     const exporter = require("tasks/export_dispatch")
+    const transform = config.get("demand.transform")
 
-//     const conf = {
+    const export_db = config.get("demand.export_db")
 
-//         url_path: "http://www.nemweb.com.au/Reports/CURRENT/Operational_Demand/ACTUAL_HH/",
+    const url = config.get("demand.url")
 
-//         pick: 2,
+    const pick = config.get("demand.pick")
 
-//         fetcher,
+    const pattern = config.get("demand.pattern")
 
-//         pre_parser,
+    const conf = {
 
-//         parser,
+        url,
 
-//         exporter
+        pick,
 
-//     }
+        pattern,
 
-//     scrape(conf)
+        fetch: require(`./tasks/${fetch}`),
 
-// }
+        pre_parse: require(`./tasks/${pre_parse}`),
+
+        parse: require(`./tasks/${parse}`),
+
+        transform: require(`./tasks/${transform}`),
+
+        export_db: require(`./tasks/${export_db}`)
+
+    }
+
+    scrape(conf)
+
+}
 
 function scrape_dispatch () {
 
@@ -58,11 +70,15 @@ function scrape_dispatch () {
 
     const pick = config.get("dispatch.pick")
 
+    const pattern = config.get("dispatch.pattern")
+
     const conf = {
 
         url,
 
         pick,
+
+        pattern,
 
         fetch: require(`./tasks/${fetch}`),
 

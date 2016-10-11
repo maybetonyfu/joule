@@ -48,7 +48,9 @@ function reduce_dispatch (data) {
 
             if (dispatch_entry !== -1) {
 
-                dispatch[dispatch_entry][0]["value"] += Math.round(+datum.SCADAVALUE)
+                const value = Math.round(+datum.SCADAVALUE) >= 0 ? Math.round(+datum.SCADAVALUE) : 0
+
+                dispatch[dispatch_entry][0]["value"] += value
                 dispatch[dispatch_entry][0]["time"] = moment.tz(datum.SETTLEMENTDATE, "YYYY/MM/DD HH:mm:ss", "Australia/Sydney").valueOf()
 
             }
