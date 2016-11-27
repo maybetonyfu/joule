@@ -15,7 +15,7 @@
     "config": "^1.21.0",
     "csv": "^1.1.0",
     "download": "^5.0.2",
-    "influx": "^4.2.2",
+    "influx": "^5.0.2",
     "lodash": "^4.16.4",
     "moment": "^2.13.0",
     "moment-timezone": "^0.5.4",
